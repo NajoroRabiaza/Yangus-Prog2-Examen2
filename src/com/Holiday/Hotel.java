@@ -5,16 +5,20 @@ import java.util.List;
 public class Hotel {
     private String nom;
     private GeographicalLayout coordonnees;
+    private String description;
     private String telephone;
     private String email;
+    private List<String> avie;
     private List<String> avieUser;
     private List<String> chambres;
 
-    public Hotel(String nom, GeographicalLayout coordonnees, String telephone, String email, List<String> avieUser, List<String> chambres) {
+    public Hotel(String nom, GeographicalLayout coordonnees, String description, String telephone, String email, List<String> avie, List<String> avieUser, List<String> chambres) {
         this.nom = nom;
         this.coordonnees = coordonnees;
+        this.description = description;
         this.telephone = telephone;
         this.email = email;
+        this.avie = avie;
         this.avieUser = avieUser;
         this.chambres = chambres;
     }
@@ -39,14 +43,27 @@ public class Hotel {
         return avieUser;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public List<String> getAvie() {
+        return avie;
+    }
+
+    public List<String> getAvieUser() {
+        return avieUser;
+    }
+
     public List<String> getChambres() {
         return chambres;
     }
 
     @Override
     public String toString() {
-        return "Hotel: " + nom + ", Coordonnées: " + coordonnees + ", Téléphone: " + telephone + ", Email: " + email +
-                "\nAvis des clients: " + avieUser + "\nChambres: " + chambres;
+        return "Hotel: " + nom + ", Coordonnées: " + coordonnees + ", Description: " + description +
+                ", Téléphone: " + telephone + ", Email: " + email + "\nAvis: " + avie +
+                "\nChambres: " + chambres;
     }
 }
 
