@@ -7,15 +7,15 @@ public class Hotel {
     private GeographicalLayout coordonnees;
     private String telephone;
     private String email;
-    private List<String> avieClients;
+    private List<String> avieUser;
     private List<String> chambres;
 
-    public Hotel(String nom, GeographicalLayout coordonnees, String telephone, String email, List<String> avisClients, List<String> chambres) {
+    public Hotel(String nom, GeographicalLayout coordonnees, String telephone, String email, List<String> avieUser, List<String> chambres) {
         this.nom = nom;
         this.coordonnees = coordonnees;
         this.telephone = telephone;
         this.email = email;
-        this.avieClients = avisClients;
+        this.avieUser = avieUser;
         this.chambres = chambres;
     }
 
@@ -36,7 +36,7 @@ public class Hotel {
     }
 
     public List<String> getAvisClients() {
-        return avieClients;
+        return avieUser;
     }
 
     public List<String> getChambres() {
@@ -46,7 +46,7 @@ public class Hotel {
     @Override
     public String toString() {
         return "Hotel: " + nom + ", Coordonnées: " + coordonnees + ", Téléphone: " + telephone + ", Email: " + email +
-                "\nAvis des clients: " + avieClients + "\nChambres: " + chambres;
+                "\nAvis des clients: " + avieUser + "\nChambres: " + chambres;
     }
 }
 
