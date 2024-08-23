@@ -29,4 +29,21 @@ public class Carte {
         }
         return bestHotel;
     }
+    // Pour voir le montant minimum pour une nuité
+    public double findCheapestHotelPrice(List<Parc> parcsAVisiter) {
+        float prixTotal = 0;
+
+        for (Parc parc : parcsAVisiter) {
+            float prixMin = (float) Double.MAX_VALUE;
+            for (Hotel hotel : parc.getHotelsProches()) {
+                for (String chambre : hotel.getChambres()) {
+                    if (chambre.getPrixParNuit() < prixMin) {
+                        prixMin = chambre.getPrixParNuit();
+                    }
+                }
+            }
+            prixTotal += prixMin;
+        }
+        return prixTotal;
+    }
 }

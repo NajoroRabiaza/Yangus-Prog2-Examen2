@@ -2,18 +2,18 @@ package com.Holiday;
 
 public class Room {
     private String type;
-    private double prixParNuit;
+    private float prixParNuit;
 
     public Room(String type, double prixParNuit) {
         this.type = type;
-        this.prixParNuit = prixParNuit;
+        this.prixParNuit = (float) prixParNuit;
     }
 
     public String getType() {
         return type;
     }
 
-    public double getPrixParNuit() {
+    public float getPrixParNuit() {
         return prixParNuit;
     }
 
